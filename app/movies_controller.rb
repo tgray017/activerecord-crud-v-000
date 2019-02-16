@@ -64,16 +64,16 @@ end
 def can_be_found_updated_and_saved
   # Updtate the title "Awesome Flick" to "Even Awesomer Flick", save it, then return it
   Movie.create(title: "Awesome Flick")
-  __
-  __
-  __
+  movie = Movie.find_by(:title => "Awesome Flick")
+  movie.update(:title => "Even Awesomer Flick")
+  movie
 end
 
 def can_update_using_update_method
   # Update movie title to "Wat, huh?"
   Movie.create(title: "Wat?")
-  __
-  __
+  movie = Movie.find_by(:title => "Wat?")
+  movie.update(:title => "Wat, huh?")
 end
 
 def can_update_multiple_items_at_once
